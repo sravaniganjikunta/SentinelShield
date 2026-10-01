@@ -1,0 +1,16 @@
+timestamp=2026-09-29T18:52:14.691864 src_ip=127.0.0.1 method=GET path=/search query="q=hello" attack=NONE action=ALLOW
+timestamp=2026-09-29T18:59:33.018445 src_ip=127.0.0.1 method=GET path=/search query="q=hello" attack=NONE action=ALLOW
+timestamp=2026-09-29T19:05:13.201405 src_ip=127.0.0.1 method=GET path=/ query="q=%3Cscript%3Ealert(1)%3C/script%3E" attack=XSS action=BLOCK
+timestamp=2026-09-29T19:05:42.547368 src_ip=127.0.0.1 method=GET path=/search query="q=%3Cscript%3Ealert(%27XSS%27)%3C/script%3E" attack=XSS action=BLOCK
+timestamp=2026-09-29T19:24:34.027558 src_ip=127.0.0.1 method=GET path=/search query="q=hello" attack=NONE action=ALLOW
+timestamp=2026-09-29T19:25:16.889758 src_ip=127.0.0.1 method=GET path=/search query="q=%3Cscript%3Ealert(1)%3C/script%3E" attack=XSS action=BLOCK
+timestamp=2026-09-29T19:29:41.072818 src_ip=127.0.0.1 method=GET path=/search query="q=hello" attack=NONE action=ALLOW
+timestamp=2026-09-29T19:30:06.155328 src_ip=127.0.0.1 method=GET path=/search query="q=%3Cscript%3Ealert(1)%3C/script%3E" attack=XSS action=BLOCK
+timestamp=2026-09-29T19:30:33.529998 src_ip=127.0.0.1 method=GET path=/search query="q=%27%20OR%201=1" attack=SQL_INJECTION action=BLOCK
+timestamp=2026-09-29T19:30:58.551445 src_ip=127.0.0.1 method=GET path=/search query="q=../../test" attack=PATH_TRAVERSAL action=BLOCK
+timestamp=2026-09-29T19:31:21.267709 src_ip=127.0.0.1 method=GET path=/search query="q=test%3Bwhoami" attack=COMMAND_INJECTION action=BLOCK
+timestamp=2026-09-29T19:37:17.287272 alert_id=SS-00001 src_ip=127.0.0.1 method=GET path=/search query="q=%3Cscript%3Ealert(1)%3C/script%3E" attack=XSS severity=HIGH action=BLOCK
+timestamp=2026-10-01T18:15:56.058916 alert_id=SS-00001 src_ip=127.0.0.1 method=GET path=/search query="q=hello" attack=NONE severity=INFO action=ALLOW
+timestamp=2026-10-01T18:17:42.198995 alert_id=SS-00002 src_ip=127.0.0.1 method=GET path=/search query="q=%3Cscript%3Ealert(%22XSS%22)%3C/script%3E" attack=XSS severity=HIGH action=BLOCK
+timestamp=2026-10-01T18:18:05.981294 alert_id=SS-00003 src_ip=127.0.0.1 method=GET path=/search query="q=%27%20OR%20%271%27=%271" attack=SQL_INJECTION severity=CRITICAL action=BLOCK
+timestamp=2026-10-01T18:23:11.993555 alert_id=SS-00004 src_ip=127.0.0.1 method=GET path=/search query="q=../../etc/passwd" attack=PATH_TRAVERSAL severity=HIGH action=BLOCK
